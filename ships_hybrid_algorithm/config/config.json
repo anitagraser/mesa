@@ -1,8 +1,8 @@
 {
-    "simulation_steps": 1500,
+    "simulation_steps": 500,
     "width": 100,
     "height": 100,
-    "num_ships": 35,
+    "num_ships": 10,
     "max_speed_range": [1.0, 1.5],
     "speed_variation": {
         "enabled": true,
