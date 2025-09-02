@@ -1,80 +1,87 @@
 {
-    "simulation_steps": 500,
-    "width": 100,
-    "height": 100,
-    "num_ships": 10,
-    "max_speed_range": [1.0, 1.5],
-    "speed_variation": {
-        "enabled": true,
-        "max_speed_variation": 0.05
-    },
-    "directional_variation": {
-        "enabled": true,
-        "max_deviation_deg": 45.0,
-        "activation_chance": 0.02,
-        "duration_steps": 15
-    },
-    "resolution": 1,
-    "obstacle_threshold": 2,
-    "lookahead": 5,
-    "ports": [
-        [10, 10], 
-        [90, 10], 
-        [20, 80], 
-        [70, 60], 
-        [45, 20], 
-        [55, 85],
-        [30, 50],
-        [99, 35],
-        [16, 58],
-        [15, 45]
+  "simulation_steps": 500,
+  "width": 444,
+  "height": 200,
+  "num_ships": 10,
+  "max_speed_range": [
+    1.0,
+    1.5
+  ],
+  "speed_variation": {
+    "enabled": true,
+    "max_speed_variation": 0.05
+  },
+  "directional_variation": {
+    "enabled": true,
+    "max_deviation_deg": 45.0,
+    "activation_chance": 0.02,
+    "duration_steps": 15
+  },
+  "resolution": 1,
+  "obstacle_threshold": 2,
+  "lookahead": 5,
+  "ports": [
+    [
+      166.2535835989903,
+      154.7563053778767
     ],
-    "speed_limit_zones": [
-        {
-			"max_speed": 0.3,
-			"zone": [[60, 40], [80, 40], [80, 50], [60, 50]]
-		},
-		{
-			"max_speed": 0.2,
-			"zone": [[30, 60], [50, 60], [40, 70]]
-		},
-		{
-			"max_speed": 0.4,
-			"zone": [[80, 30], [100, 30], [100, 40], [80, 40]]
-		},
-		{
-			"max_speed": 0.5,
-			"zone": [[20, 40], [20, 60], [40, 60], [40, 40]]
-		}
+    [
+      219.95328715101317,
+      169.74792774339485
     ],
-    "obstacles": [
-        [[0, 100], [100, 100], [100, 50], [90, 60], [85, 80], [60, 90], [20, 95], [5, 80], [10, 40], [20, 20], [0, 10]],
-        [[60, 10], [70, 15], [75, 25], [72, 35], [65, 40], [55, 38], [50, 30], [52, 18]],  
-        [[30, 70], [40, 72], [48, 78], [47, 85], [38, 88], [28, 83], [25, 75]], 
-        [[15, 50], [18, 48], [22, 52], [20, 56], [16, 55]],  
-        [[80, 40], [83, 38], [86, 42], [84, 45], [81, 44]],  
-        [[50, 55], [53, 53], [57, 56], [55, 60], [51, 58]],  
-        [[75, 75], [78, 73], [82, 76], [80, 80], [76, 79]],
-        [[27, 28], [35, 27], [38, 29], [39, 32], [37, 36], [32, 39], [28, 37], [26, 33]]  
+    [
+      7.214540346605684,
+      10.908202519137038
     ],
-    "geospatial_bounds": {
-        "min_lat": 20.0,
-        "max_lat": 40.0,
-        "min_lon": 0.0,
-        "max_lon": 20.0
-    },
-    "time_step_seconds": 0.002,
-    "dwa_config": {
-        "max_speed": 1.0,
-        "min_speed": 0.1,
-        "max_yaw_rate": 30.0,
-        "max_acceleration": 0.1,
-        "dt": 0.1,
-        "predict_time": 2,
-        "robot_radius": 1,
-        "to_goal_cost_gain": 1.0,
-        "speed_cost_gain": 1.0,
-        "obstacle_cost_gain": 1.0,
-        "turn_cost_gain": 1.0
-    }
+    [
+      250.19575278361827,
+      97.02901168407732
+    ],
+    [
+      120.25598357113547,
+      24.24771492635977
+    ],
+    [
+      292.1409561856498,
+      165.11598580594807
+    ],
+    [
+      304.71234802692646,
+      95.4093159078735
+    ],
+    [
+      400.9415649241013,
+      93.67301677306372
+    ],
+    [
+      68.57316571787659,
+      62.42832062009285
+    ],
+    [
+      366.6272157876524,
+      110.50770328569644
+    ]
+  ],
+  "speed_limit_zones": [],
+  "obstacles": [],
+  "geospatial_bounds": {
+    "min_lat": 48.27484781858935,
+    "max_lat": 48.39397761250755,
+    "min_lon": -4.594589094740045,
+    "max_lon": -4.299293826306912
+  },
+  "time_step_seconds": 0.002,
+  "dwa_config": {
+    "max_speed": 1.0,
+    "min_speed": 0.1,
+    "max_yaw_rate": 30.0,
+    "max_acceleration": 0.1,
+    "dt": 0.1,
+    "predict_time": 2,
+    "robot_radius": 1,
+    "to_goal_cost_gain": 1.0,
+    "speed_cost_gain": 1.0,
+    "obstacle_cost_gain": 1.0,
+    "turn_cost_gain": 1.0
+  }
 }
