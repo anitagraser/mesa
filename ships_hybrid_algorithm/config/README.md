@@ -34,7 +34,5 @@ You need x,y to have the same ratio aspect as the lon,lat of your map. For exemp
 2. Decide height of the map in grid coordinates (eg, 500)
 3. Get the "mean latitude" of your map (eg, $\phi_0$).
 4. Ratio is :
-$$
-R \approx \cos(\phi_0)\cdot \frac{\Delta lon}{\Delta lat}
-$$
+$R \approx \cos(\phi_0)\cdot \frac{\Delta lon}{\Delta lat}$
 5. Now you have : $x = y \times R$
