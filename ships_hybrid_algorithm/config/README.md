@@ -36,3 +36,8 @@ You need x,y to have the same ratio aspect as the lon,lat of your map. For exemp
 4. Ratio is :
 $R \approx \cos(\phi_0)\cdot \frac{\Delta lon}{\Delta lat}$
 5. Now you have : $x = y \times R$
+
+## How to convert lon,lat to x,y
+
+You have defined width and height of the map. You also have min and max lon,lat of the map in decimal degrees.
+$x=\frac{\text{lon}-\text{min\_lon}}{\text{max\_lon}-\text{min\_lon}}\cdot \text{width},\quad y=\frac{\text{lat}-\text{min\_lat}}{\text{max\_lat}-\text{min\_lat}}\cdot \text{height}$
