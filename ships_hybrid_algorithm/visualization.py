@@ -39,25 +39,41 @@ def plot_speed_limit_zones(ax, speed_limit_zones):
         ax.add_patch(polygon_patch)
 
 def plot_ship_trajectories(ax, df):
-    """Plot ship trajectories and A* paths."""
+    """Plot ship trajectories and A* paths (if available)."""
+    import math, ast, json
+
+    def _coerce_path(p):
+        if p is None: return None
+        if isinstance(p, float) and math.isnan(p): return None
+        if isinstance(p, str):
+            s = p.strip()
+            if not s: return None
+            try: p = json.loads(s)
+            except Exception:
+                try: p = ast.literal_eval(s)
+                except Exception: return None
+        if isinstance(p, (list, tuple)) and p:
+            pts = []
+            for pt in p:
+                if isinstance(pt, (list, tuple)) and len(pt) == 2:
+                    try: pts.append((float(pt[0]), float(pt[1])))
+                    except Exception: pass
+            return pts or None
+        return None
+
     a_star_legend_added = False
+    has_astar_col = "AStarPath" in df.columns
 
     for agent_id in df["AgentID"].unique():
         ship_data = df[df["AgentID"] == agent_id]
-
-        # Extract A* path from the first entry
-        a_star_path = ship_data.iloc[0]["AStarPath"]
-
-        # Only label the first A* path
-        a_star_label = "A* Path" if not a_star_legend_added else None
-        a_star_legend_added = True  
-
-        # Plot A* path as a dashed line
-        a_star_x, a_star_y = zip(*a_star_path)
-        ax.plot(a_star_x, a_star_y, linestyle="dashed", color="gray", alpha=0.7, label=a_star_label)
-
-        # Plot ship trajectory as a solid line
-        ax.plot(ship_data["x"], ship_data["y"], linestyle="-", alpha=0.7, label=f"Ship {agent_id}")
+        if has_astar_col:
+            path = _coerce_path(ship_data.iloc[0]["AStarPath"])
+            if path:
+                label = "A* Path" if not a_star_legend_added else None
+                a_star_legend_added = True
+                xs, ys = zip(*path)
+                ax.plot(xs, ys, linestyle="dashed", color="gray", alpha=0.7, label=label)
+        ax.plot(ship_data["x"], ship_data["y"], linestyle="-", alpha=0.8, label=f"Ship {agent_id}")
 
 def setup_plot():
     """Initialize and return the plot figure and axis."""

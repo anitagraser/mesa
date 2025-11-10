@@ -1,0 +1,19 @@
+name: PFE
+channels:
+  - conda-forge
+  - nvidia
+  - pytorch
+  - defaults
+  - anaconda
+dependencies:
+  - python=3.9
+  - geopandas
+  - pymeos
+  - pytorch
+  - pytorch-cuda=12.4
+  - pyproj[version='>=3.6']
+  - proj[version='>=9']
+  - proj-data[version='>=1']
+  - shapely
+  - gdal
+  - rtree

@@ -2,7 +2,7 @@
 
 Agent based simulation of ship movements between ports, using a dynamic window approach and A* routing with support for speed restrictions.
 
-![A set of simultd ship trajectories](ships.png)
+![A set of simultd ship trajectories](simulation_plot.png)
 
 ## Installation
 
